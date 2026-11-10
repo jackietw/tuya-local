@@ -1,0 +1,128 @@
+name: Dual Channel Energy Meter
+products:
+  - id: ax1iylf5qp4iqlkg
+entities:
+  # ================= System Totals =================
+  - entity: sensor
+    name: Voltage
+    class: voltage
+    dps:
+      - id: 103
+        type: integer
+        name: sensor
+        unit: V
+        class: measurement
+        mapping:
+          - scale: 10
+  - entity: sensor
+    name: Total Power
+    class: power
+    dps:
+      - id: 104
+        type: integer
+        name: sensor
+        unit: W
+        class: measurement
+        mapping:
+          - scale: 10
+  - entity: sensor
+    name: Total Forward Energy
+    class: energy
+    dps:
+      - id: 101
+        type: integer
+        name: sensor
+        unit: kWh
+        class: total_increasing
+        mapping:
+          - scale: 100
+
+  # ================= Channel A =================
+  - entity: sensor
+    name: Channel A Power Factor
+    class: power_factor
+    category: diagnostic
+    dps:
+      - id: 106
+        type: integer
+        name: sensor
+        mapping:
+          - scale: 100
+  - entity: sensor
+    name: Channel A Power
+    class: power
+    dps:
+      - id: 107
+        type: integer
+        name: sensor
+        unit: W
+        class: measurement
+        mapping:
+          - scale: 10
+  - entity: sensor
+    name: Channel A Current
+    class: current
+    dps:
+      - id: 108
+        type: integer
+        name: sensor
+        unit: A
+        class: measurement
+        mapping:
+          - scale: 1000
+  - entity: sensor
+    name: Channel A Energy
+    class: energy
+    dps:
+      - id: 109
+        type: integer
+        name: sensor
+        unit: kWh
+        class: total_increasing
+        mapping:
+          - scale: 100
+
+  # ================= Channel B =================
+  - entity: sensor
+    name: Channel B Power Factor
+    class: power_factor
+    category: diagnostic
+    dps:
+      - id: 117
+        type: integer
+        name: sensor
+        mapping:
+          - scale: 100
+  - entity: sensor
+    name: Channel B Power
+    class: power
+    dps:
+      - id: 118
+        type: integer
+        name: sensor
+        unit: W
+        class: measurement
+        mapping:
+          - scale: 10
+  - entity: sensor
+    name: Channel B Current
+    class: current
+    dps:
+      - id: 119
+        type: integer
+        name: sensor
+        unit: A
+        class: measurement
+        mapping:
+          - scale: 1000
+  - entity: sensor
+    name: Channel B Energy
+    class: energy
+    dps:
+      - id: 120
+        type: integer
+        name: sensor
+        unit: kWh
+        class: total_increasing
+        mapping:
+          - scale: 100
